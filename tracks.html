@@ -22,36 +22,25 @@
 
 
 <script type="text/javascript">
-$(document).ready(function(){
-  $.ajax({
-    type: "GET",
-    url: "tracks.json",
-    dataType: "json",
-    success: handleResponse,
-    error: function(){ alert("json error"); }
- });
-});
-
+$("#map").ready(function() { 
+$.getJSON("tracks.json",function(result){
 var trackInfo = {};
 var trackPoints = [];
-
-function handleResponse(result) {
- $.each(result.tracks.storm[0].event, function(i) {
-			var date = result.tracks.storm[0].event[i].date;
-			var time = result.tracks.storm[0].event[i].time;
-			var lat = parseFloat(result.tracks.storm[0].event[i].lat);
-			var lon = parseFloat(result.tracks.storm[0].event[i].long);
-			var mbar = result.tracks.storm[0].event[i].mbar;
-			var windspeed = result.tracks.storm[0].event[i].windspeed;
-			var stage = result.tracks.storm[0].event[i].stage;
+var s = 1;
+ $.each(result.tracks.storm[s].event, function(i) {
+			var date = result.tracks.storm[s].event[i].date;
+			var time = result.tracks.storm[s].event[i].time;
+			var lat = parseFloat(result.tracks.storm[s].event[i].lat);
+			var lon = parseFloat(result.tracks.storm[s].event[i].long);
+			var mbar = result.tracks.storm[s].event[i].mbar;
+			var windspeed = result.tracks.storm[s].event[i].windspeed;
+			var stage = result.tracks.storm[s].event[i].stage;
 			
 			trackPoints.push(new google.maps.LatLng(lat,"-" + lon));
 			i++;
            });
-}	
-
-      function initialize() {
-        var myOptions = {
+		   
+		   var myOptions = {
 	          center: new google.maps.LatLng(32.2212158,-82.9574812,6),
           zoom: 4,   mapTypeId: google.maps.MapTypeId.ROADMAP
         };
@@ -60,10 +49,12 @@ function handleResponse(result) {
        var trackPointsRoute = new google.maps.Polyline({ path: trackPoints,
             strokeColor: "#FF0000", strokeWeight: 2 });      
         trackPointsRoute.setMap(map);
-      }
+});	
+google.maps.event.trigger(map, 'resize');
+});
     </script>
   </head>
-  <body onload="initialize()">
+  <body>
 <div data-role="page" id="tracksMain">
     <div data-role="header">
         <div data-role="navbar">
@@ -94,14 +85,18 @@ function handleResponse(result) {
 	$.getJSON("tracks.json",function(result){
 	$.each(result.tracks.storm[i], function(i) {
 			var name = result.tracks.storm[count].name;
-			$("#stormList").append("<li><a href='#" + result.tracks.storm[count].name +  "'>" + result.tracks.storm[count].name + "</a>");
+			$("#stormList").append("<li><a href='#map' data-name='"+result.tracks.storm[count].name+"');'>" + result.tracks.storm[count].name + "</a>");
 			
 			i++;
 			count++;
            });
 	$("#stormList").listview("refresh");
+	
 });
-});	
+});
+
+	
+
 	</script>
 	
 	
@@ -110,8 +105,9 @@ function handleResponse(result) {
         <header data-role="header">
             <a href="tracks.html" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" data-transition="pop">Home</a>
             <h1 id="mapsHeader" class="ui-title"></h1>
+			<div>hello world</div>
         </header>
-        <section class="ui-content" role="main">
+        <section class="ui-content" role="main" >
             <div id="map_canvas" ></div>
 			
         </section>	
