@@ -10,7 +10,7 @@
                 top : 40px !important; 
                 right : 0;
                 bottom : 40px !important; 
-                left : 0 !important;    
+                left : 0 !important;   
             }
         </style>
 	<link rel="stylesheet" href="css/jquery.mobile.css" />
@@ -22,36 +22,32 @@
 
 
 <script type="text/javascript">
-$("#map").ready(function() { 
-$.getJSON("tracks.json",function(result){
 var trackInfo = {};
 var trackPoints = [];
 var s = 1;
- $.each(result.tracks.storm[s].event, function(i) {
-			var date = result.tracks.storm[s].event[i].date;
-			var time = result.tracks.storm[s].event[i].time;
-			var lat = parseFloat(result.tracks.storm[s].event[i].lat);
-			var lon = parseFloat(result.tracks.storm[s].event[i].long);
-			var mbar = result.tracks.storm[s].event[i].mbar;
-			var windspeed = result.tracks.storm[s].event[i].windspeed;
-			var stage = result.tracks.storm[s].event[i].stage;
-			
-			trackPoints.push(new google.maps.LatLng(lat,"-" + lon));
-			i++;
-           });
-		   
-		   var myOptions = {
-	          center: new google.maps.LatLng(32.2212158,-82.9574812,6),
-          zoom: 4,   mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-		
-       var trackPointsRoute = new google.maps.Polyline({ path: trackPoints,
-            strokeColor: "#FF0000", strokeWeight: 2 });      
-        trackPointsRoute.setMap(map);
-});	
+
+$("#map").after(function() { 
+
 google.maps.event.trigger(map, 'resize');
 });
+
+
+$(document).ready(function() { 
+	var i = 0;
+	var count = 0;
+	$.getJSON("tracks.json",function(result){
+	$.each(result.tracks.storm[i], function(i) {
+			var name = result.tracks.storm[count].name;
+			$("#stormList").append("<li id='"+count+"'><a href='#map' );'>" + result.tracks.storm[count].name + "</a>");
+			
+			i++;
+			count++;
+           });
+	$("#stormList").listview("refresh");
+	
+});
+});
+
     </script>
   </head>
   <body>
@@ -79,24 +75,37 @@ google.maps.event.trigger(map, 'resize');
 	</ul>
 	
 	<script type="text/javascript">
-	$(document).ready(function() { 
-	var i = 0;
-	var count = 0;
-	$.getJSON("tracks.json",function(result){
-	$.each(result.tracks.storm[i], function(i) {
-			var name = result.tracks.storm[count].name;
-			$("#stormList").append("<li><a href='#map' data-name='"+result.tracks.storm[count].name+"');'>" + result.tracks.storm[count].name + "</a>");
+	
+
+	$('#stormList').on('click', 'li', function() {
+		s = $(this).attr('id');
+		$.getJSON("tracks.json",function(result){
+
+ $.each(result.tracks.storm[s].event, function(i) {
+			var date = result.tracks.storm[s].event[i].date;
+			var time = result.tracks.storm[s].event[i].time;
+			var lat = parseFloat(result.tracks.storm[s].event[i].lat);
+			var lon = parseFloat(result.tracks.storm[s].event[i].long);
+			var mbar = result.tracks.storm[s].event[i].mbar;
+			var windspeed = result.tracks.storm[s].event[i].windspeed;
+			var stage = result.tracks.storm[s].event[i].stage;
 			
+			trackPoints.push(new google.maps.LatLng(lat,"-" + lon));
 			i++;
-			count++;
            });
-	$("#stormList").listview("refresh");
-	
-});
-});
-
-	
-
+		   
+		   var myOptions = {
+	          center: new google.maps.LatLng(32.2212158,-82.9574812,6),
+          zoom: 4,   mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+		google.maps.event.trigger(map, 'resize');
+        var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		
+       var trackPointsRoute = new google.maps.Polyline({ path: trackPoints,
+            strokeColor: "#FF0000", strokeWeight: 2 });      
+        trackPointsRoute.setMap(map);
+});	
+    });
 	</script>
 	
 	
@@ -105,7 +114,6 @@ google.maps.event.trigger(map, 'resize');
         <header data-role="header">
             <a href="tracks.html" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" data-transition="pop">Home</a>
             <h1 id="mapsHeader" class="ui-title"></h1>
-			<div>hello world</div>
         </header>
         <section class="ui-content" role="main" >
             <div id="map_canvas" ></div>
