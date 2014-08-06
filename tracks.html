@@ -12,6 +12,11 @@
                 bottom : 40px !important; 
                 left : 0 !important;   
             }
+			
+			#maps{
+			text-align : center;
+			font-size:150%;
+			}
         </style>
 	<link rel="stylesheet" href="css/jquery.mobile.css" />
 	<link rel="stylesheet" href="css/beehooaa.css" />	
@@ -34,7 +39,7 @@ $(document).ready(function() {
 	$.getJSON("tracks.json",function(result){
 	$.each(result.tracks.storm[i], function(i) {
 			var name = result.tracks.storm[count].name;
-			$("#stormList").append("<li id='"+count+"'><a href='#map' );'>" + result.tracks.storm[count].name + "</a>");
+			$("#stormList").append("<li data-id='"+ name +"' id='"+count+"'><a href='#map' );'>" + name + "</a>");
 			
 			i++;
 			count++;
@@ -43,6 +48,9 @@ $(document).ready(function() {
 	
 });
 });
+
+
+
 
     </script>
   </head>
@@ -71,13 +79,13 @@ $(document).ready(function() {
 	</ul>
 	
 	<script type="text/javascript">
-	
 
 	$('#stormList').on('click', 'li', function() {
-		s = $(this).attr('id');
+		s = $(this).attr('id');//set clicked hurricane as one to create
+		$("#maps").append('Tracks for: Hurricane ' + $(this).attr('data-id'));//title
 		$.getJSON("tracks.json",function(result){
-
- $.each(result.tracks.storm[s].event, function(i) {
+		trackPoints = []; //clear array
+ $.each(result.tracks.storm[s].event, function(i) {//create hurricane
 			var date = result.tracks.storm[s].event[i].date;
 			var time = result.tracks.storm[s].event[i].time;
 			var lat = parseFloat(result.tracks.storm[s].event[i].lat);
@@ -102,14 +110,15 @@ $(document).ready(function() {
         trackPointsRoute.setMap(map);
 });	
     });
+	
 	</script>
 	
 	
 	</div>
 	<div data-role="page" id="map" data-theme="a">
-        <header data-role="header">
+        <header id='maps' data-role="header">
             <a href="tracks.html" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" data-transition="pop">Home</a>
-            <h1 id="mapsHeader" class="ui-title"></h1>
+            
         </header>
         <section class="ui-content" role="main" >
             <div id="map_canvas" ></div>
