@@ -18,7 +18,8 @@
           "Southern Texas"
         ],
         "damage": "1,885",
-        "deaths": "33 (19)"
+        "deaths": "33 (19)"
+
       },
       {
         "name": "Two",
@@ -30,7 +31,8 @@
         "minMBAR": "1005",
         "area": ["Texas"],
         "damage": "Minimal",
-        "deaths": "1"
+        "deaths": "1"
+
       },
       {
         "name": "Bonnie",
@@ -45,7 +47,8 @@
           "Florida"
         ],
         "damage": "1.5",
-        "deaths": "1"
+        "deaths": "1"
+
       },
       {
         "name": "Colin",
@@ -57,7 +60,8 @@
         "minMBAR": "1005",
         "area": ["Bermuda"],
         "damage": "None",
-        "deaths": "1"
+        "deaths": "1"
+
       },
       {
         "name": "Five",
@@ -69,7 +73,8 @@
         "minMBAR": "1007",
         "area": ["United States Gulf Coast"],
         "damage": "7.1",
-        "deaths": "0 (2)"
+        "deaths": "0 (2)"
+
       },
       {
         "name": "Danielle",
@@ -81,7 +86,8 @@
         "minMBAR": "942",
         "area": ["Bermuda"],
         "damage": "Minimal",
-        "deaths": "2"
+        "deaths": "2"
+
       },
       {
         "name": "Earl",
@@ -99,7 +105,8 @@
           "Eastern Canada"
         ],
         "damage": "44.6",
-        "deaths": "5 (3)"
+        "deaths": "5 (3)"
+
       },
       {
         "name": "Fiona",
@@ -114,7 +121,8 @@
           "Bermuda"
         ],
         "damage": "Minimal",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Gaston",
@@ -126,7 +134,8 @@
         "minMBAR": "1005",
         "area": ["Lesser Antilles"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Hermine",
@@ -141,7 +150,8 @@
           "Texas"
         ],
         "damage": "740",
-        "deaths": "6 (2)"
+        "deaths": "6 (2)"
+
       },
       {
         "name": "Igor",
@@ -158,7 +168,8 @@
           "Eastern Canada"
         ],
         "damage": "200",
-        "deaths": "4"
+        "deaths": "4"
+
       },
       {
         "name": "Julia",
@@ -170,7 +181,8 @@
         "minMBAR": "948",
         "area": ["Cape Verde Islands"],
         "damage": "Minimal",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Karl",
@@ -187,7 +199,8 @@
           "Mexico"
         ],
         "damage": "5,600",
-        "deaths": "22"
+        "deaths": "22"
+
       },
       {
         "name": "Lisa",
@@ -199,7 +212,8 @@
         "minMBAR": "982",
         "area": ["None"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Matthew",
@@ -220,7 +234,8 @@
           "Haiti and Costa Rica"
         ],
         "damage": "2,600",
-        "deaths": "126"
+        "deaths": "126"
+
       },
       {
         "name": "Nicole",
@@ -236,7 +251,8 @@
           "Florida"
         ],
         "damage": "235.4",
-        "deaths": "13"
+        "deaths": "13"
+
       },
       {
         "name": "Otto",
@@ -252,7 +268,8 @@
           "Puerto Rico"
         ],
         "damage": "22",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Paula",
@@ -269,7 +286,8 @@
           "Florida Keys"
         ],
         "damage": "200",
-        "deaths": "1"
+        "deaths": "1"
+
       },
       {
         "name": "Richard",
@@ -286,7 +304,8 @@
           "Mexico"
         ],
         "damage": "80",
-        "deaths": "1 (1)"
+        "deaths": "1 (1)"
+
       },
       {
         "name": "Shary",
@@ -298,7 +317,8 @@
         "minMBAR": "989",
         "area": ["Bermuda"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Tomas",
@@ -314,7 +334,8 @@
           "The Bahamas"
         ],
         "damage": "741",
-        "deaths": "71"
+        "deaths": "71"
+
       },
       {
         "name": "Arlene",
@@ -332,7 +353,8 @@
           "Texas"
         ],
         "damage": "223.4",
-        "deaths": "18 (4)"
+        "deaths": "18 (4)"
+
       },
       {
         "name": "Bret",
@@ -348,7 +370,8 @@
           "Bermuda"
         ],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Cindy",
@@ -360,7 +383,8 @@
         "minMBAR": "994",
         "area": ["Bermuda"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Don",
@@ -378,7 +402,8 @@
           "Northeastern Mexico"
         ],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Emily",
@@ -398,7 +423,8 @@
           "South Florida"
         ],
         "damage": ">5",
-        "deaths": "4 (1)"
+        "deaths": "4 (1)"
+
       },
       {
         "name": "Franklin",
@@ -422,7 +448,8 @@
         "minMBAR": "1000",
         "area": ["Bermuda"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Harvey",
@@ -440,7 +467,8 @@
           "Mexico (Veracruz)"
         ],
         "damage": "Minimal",
-        "deaths": "3"
+        "deaths": "3"
+
       },
       {
         "name": "Irene",
@@ -465,7 +493,8 @@
           "Europe"
         ],
         "damage": "16,600",
-        "deaths": "49 (7)"
+        "deaths": "49 (7)"
+
       },
       {
         "name": "Ten",
@@ -477,7 +506,8 @@
         "minMBAR": "1006",
         "area": ["None"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Jose",
@@ -489,7 +519,8 @@
         "minMBAR": "1006",
         "area": ["Bermuda"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Katia",
@@ -511,7 +542,8 @@
           "Russia"
         ],
         "damage": "~157",
-        "deaths": "4"
+        "deaths": "4"
+
       },
       {
         "name": "Unnamed",
@@ -523,7 +555,8 @@
         "minMBAR": "1002",
         "area": ["None"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Lee",
@@ -538,7 +571,8 @@
           "Northeastern United States"
         ],
         "damage": "?1 600",
-        "deaths": "18"
+        "deaths": "18"
+
       },
       {
         "name": "Maria",
@@ -554,7 +588,8 @@
           "Newfoundland"
         ],
         "damage": "Minimal",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Nate",
@@ -566,7 +601,8 @@
         "minMBAR": "994",
         "area": ["Mexico (Veracruz)"],
         "damage": "Minimal",
-        "deaths": "4 (1)"
+        "deaths": "4 (1)"
+
       },
       {
         "name": "Ophelia",
@@ -584,7 +620,8 @@
           "United Kingdom"
         ],
         "damage": "Minimal",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Philippe",
@@ -596,7 +633,8 @@
         "minMBAR": "976",
         "area": ["None"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Rina",
@@ -613,7 +651,8 @@
           "Cuba"
         ],
         "damage": "Minimal",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Sean",
@@ -625,7 +664,8 @@
         "minMBAR": "982",
         "area": ["Bermuda"],
         "damage": "None",
-        "deaths": "-1"
+        "deaths": "-1"
+
       },
       {
         "name": "Alberto",
@@ -637,7 +677,8 @@
         "minMBAR": "995",
         "area": ["Southeastern United States"],
         "damage": "0",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Beryl",
@@ -653,7 +694,8 @@
           "Southeastern United States (Florida)]"
         ],
         "damage": "0.148",
-        "deaths": "1 (2)"
+        "deaths": "1 (2)"
+
       },
       {
         "name": "Chris",
@@ -668,7 +710,8 @@
           "Atlantic Canada"
         ],
         "damage": "0",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Debby",
@@ -685,7 +728,8 @@
           "Bermuda"
         ],
         "damage": "308.7",
-        "deaths": "7 (3)"
+        "deaths": "7 (3)"
+
       },
       {
         "name": "Ernesto",
@@ -702,7 +746,8 @@
           "Mexico (Yucatan Peninsula)"
         ],
         "damage": "174",
-        "deaths": "7 (5)"
+        "deaths": "7 (5)"
+
       },
       {
         "name": "Florence",
@@ -714,7 +759,8 @@
         "minMBAR": "1002",
         "area": ["Cape Verde"],
         "damage": "0",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Helene",
@@ -731,7 +777,8 @@
           "Mexico"
         ],
         "damage": ">17",
-        "deaths": "2"
+        "deaths": "2"
+
       },
       {
         "name": "Gordon",
@@ -743,7 +790,8 @@
         "minMBAR": "965",
         "area": ["Azores"],
         "damage": "Minimal",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Isaac",
@@ -763,7 +811,8 @@
           "Midwestern United States"
         ],
         "damage": "2,390",
-        "deaths": "34 (7)"
+        "deaths": "34 (7)"
+
       },
       {
         "name": "Joyce",
@@ -775,7 +824,8 @@
         "minMBAR": "1006",
         "area": ["None"],
         "damage": "0",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Kirk",
@@ -787,7 +837,8 @@
         "minMBAR": "970",
         "area": ["None"],
         "damage": "0",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Leslie",
@@ -805,7 +856,8 @@
           "Scotland"
         ],
         "damage": "10.1",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Michael",
@@ -817,7 +869,8 @@
         "minMBAR": "964",
         "area": ["0"],
         "damage": "0",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Nadine",
@@ -829,7 +882,8 @@
         "minMBAR": "978",
         "area": ["Azores"],
         "damage": "Minimal",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Oscar",
@@ -841,7 +895,8 @@
         "minMBAR": "994",
         "area": ["None"],
         "damage": "0",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Patty",
@@ -853,7 +908,8 @@
         "minMBAR": "1005",
         "area": ["The Bahamas"],
         "damage": "0",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Rafael",
@@ -870,7 +926,8 @@
           "Atlantic Canada (Newfoundland)"
         ],
         "damage": ">2",
-        "deaths": "1"
+        "deaths": "1"
+
       },
       {
         "name": "Sandy",
@@ -894,7 +951,8 @@
           "Quebec"
         ],
         "damage": "68,000",
-        "deaths": "148 (138)"
+        "deaths": "148 (138)"
+
       },
       {
         "name": "Tony",
@@ -905,7 +963,8 @@
         "minMBAR": "1000",
         "area": ["None"],
         "damage": "0",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Andrea",
@@ -922,7 +981,8 @@
           "Atlantic Canada"
         ],
         "damage": "0.04",
-        "deaths": "4"
+        "deaths": "4"
+
       },
       {
         "name": "Barry",
@@ -937,7 +997,8 @@
           "Mexico (Veracruz)"
         ],
         "damage": "Minimal",
-        "deaths": "5"
+        "deaths": "5"
+
       },
       {
         "name": "Chantal",
@@ -953,7 +1014,8 @@
           "Hispaniola"
         ],
         "damage": "10[23]",
-        "deaths": "1"
+        "deaths": "1"
+
       },
       {
         "name": "Dorian",
@@ -968,7 +1030,8 @@
           "Florida"
         ],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Erin",
@@ -980,7 +1043,8 @@
         "minMBAR": "1006",
         "area": ["Cape Verde"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Fernand",
@@ -992,7 +1056,8 @@
         "minMBAR": "1001",
         "area": ["Mexico (Veracruz)"],
         "damage": "Millions[78]",
-        "deaths": "14"
+        "deaths": "14"
+
       },
       {
         "name": "Gabrielle",
@@ -1010,7 +1075,8 @@
           "Atlantic Canada"
         ],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Eight",
@@ -1022,7 +1088,8 @@
         "minMBAR": "1008",
         "area": ["Mexico (Tamaulipas)"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Humberto",
@@ -1034,7 +1101,8 @@
         "minMBAR": "979",
         "area": ["Cape Verde"],
         "damage": "Minimal",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Ingrid",
@@ -1049,7 +1117,8 @@
           "Texas"
         ],
         "damage": "1500[79]",
-        "deaths": "23"
+        "deaths": "23"
+
       },
       {
         "name": "Jerry",
@@ -1061,7 +1130,8 @@
         "minMBAR": "1005",
         "area": ["Azores"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Karen",
@@ -1076,7 +1146,8 @@
           "United States Gulf Coast"
         ],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Lorenzo",
@@ -1088,7 +1159,8 @@
         "minMBAR": "1000",
         "area": ["None"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Melissa",
@@ -1100,7 +1172,8 @@
         "minMBAR": "980",
         "area": ["Azores"],
         "damage": "None",
-        "deaths": "0"
+        "deaths": "0"
+
       },
       {
         "name": "Unnamed",

@@ -10,7 +10,7 @@
                 top : 40px !important; 
                 right : 0;
                 bottom : 40px !important; 
-                left : 0 !important;   
+                left : 0 !important;    
             }
         </style>
 	<link rel="stylesheet" href="css/jquery.mobile.css" />
@@ -18,35 +18,72 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.mobile.js"></script>
 	<script src="js/myscript.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGZ697lTX5-A6lEqAlDAS4Dip3EwX_eFc"></script>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGZ697lTX5-A6lEqAlDAS4Dip3EwX_eFc">
+	  </script>
 
-
+	 <script type="text/javascript">
+      $(document).ready(function(){
+  $.ajax({
+    type: "GET",
+    url: "tracks.json",
+    dataType: "json",
+    success: handleResponse,
+    error: function(){ alert("error"); }
+ });
+});
+</script> 
 <script type="text/javascript">
 var trackInfo = {};
-var trackPoints = [];
-var s = 1;
 
+        var MajorCities = [];
+		
 
-
-$(document).ready(function() { 
-	var i = 0;
-	var count = 0;
-	$.getJSON("tracks.json",function(result){
-	$.each(result.tracks.storm[i], function(i) {
-			var name = result.tracks.storm[count].name;
-			$("#stormList").append("<li id='"+count+"'><a href='#map' );'>" + result.tracks.storm[count].name + "</a>");
+function handleResponse(result) {
+ $.each(result.storm[0].event, function(i) {
+			var date = result.storm[0].event[i].date;
+			var time = result.storm[0].event[i].time;
+			var lat = parseFloat(result.storm[0].event[i].lat);
+			var lon = parseFloat(result.storm[0].event[i].long);
+			var mbar = result.storm[0].event[i].mbar;
+			var windspeed = result.storm[0].event[i].windspeed;
+			var stage = result.storm[0].event[i].stage;
+			$("#poop").append(lat, lon);
 			
+			MajorCities.push(new google.maps.LatLng(lat,"-" + lon));
 			i++;
-			count++;
            });
-	$("#stormList").listview("refresh");
-	
-});
-});
+        
 
+          
+
+}	
+
+	//function processTracks(data){
+	
+	//$.each(data.event); {
+	//var lat = data.event.lat;
+	//var long = data.event.long;
+	//}
+	//$("#tracksMain").html(lat);
+	//}
+
+
+      function initialize() {
+        var myOptions = {
+	          center: new google.maps.LatLng(48.554433,7.770995),
+          zoom: 4,   mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		
+       var majorCitiesRoute = new google.maps.Polyline({ path: MajorCities,
+            strokeColor: "#FF0000", strokeWeight: 2 });      
+        majorCitiesRoute.setMap(map);
+      }
     </script>
   </head>
-  <body>
+  <body onload="initialize()">
+  <div id ="poop"> test div </div>
 <div data-role="page" id="tracksMain">
     <div data-role="header">
         <div data-role="navbar">
@@ -66,56 +103,8 @@ $(document).ready(function() {
             </ul>
         </div>
     </div>
-	<!--Insert dynamic listbox-->
-	<ul data-role="listview" id="stormList" data-theme="a">
-	</ul>
-	
-	<script type="text/javascript">
-	
-
-	$('#stormList').on('click', 'li', function() {
-		s = $(this).attr('id');
-		$.getJSON("tracks.json",function(result){
-
- $.each(result.tracks.storm[s].event, function(i) {
-			var date = result.tracks.storm[s].event[i].date;
-			var time = result.tracks.storm[s].event[i].time;
-			var lat = parseFloat(result.tracks.storm[s].event[i].lat);
-			var lon = parseFloat(result.tracks.storm[s].event[i].long);
-			var mbar = result.tracks.storm[s].event[i].mbar;
-			var windspeed = result.tracks.storm[s].event[i].windspeed;
-			var stage = result.tracks.storm[s].event[i].stage;
-			
-			trackPoints.push(new google.maps.LatLng(lat,"-" + lon));
-			i++;
-           });
-		   
-		   var myOptions = {
-	          center: new google.maps.LatLng(32.2212158,-82.9574812,6),
-          zoom: 4,   mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-		
-        var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-		
-       var trackPointsRoute = new google.maps.Polyline({ path: trackPoints,
-            strokeColor: "#FF0000", strokeWeight: 2 });      
-        trackPointsRoute.setMap(map);
-});	
-    });
-	</script>
-	
-	
 	</div>
-	<div data-role="page" id="map" data-theme="a">
-        <header data-role="header">
-            <a href="tracks.html" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" data-transition="pop">Home</a>
-            <h1 id="mapsHeader" class="ui-title"></h1>
-        </header>
-        <section class="ui-content" role="main" >
-            <div id="map_canvas" ></div>
-			
-        </section>	
-       
-    </div>
+  
+    <div id="map_canvas" ></div>
   </body>
 </html>
