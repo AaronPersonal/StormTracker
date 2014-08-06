@@ -13,11 +13,11 @@ $(document).ready(function(){
 	  	console.log(data.storms.storm.length);
 
 
-	  	for(var i = 0; i<data.storms.storm.length;i++){
+	  	for(var i = 0; i < data.storms.storm.length;i++){
 	  		var storm = data.storms.storm[i];
 	  		storms.push(storm);
 	  		if(storm.start.substring(0,4) == chartYear){
-	  		totalStorm += 1;
+	  		console.log(chartYear+": Serious = "+seriousStorm+", Moderate = "+ moderateStorm + ", Total = "+totalStorm);
 		  		if (storm.category == "C3" || storm.category == "C4" || storm.category == "C5"){
 		  			serious.push(storm);
 		  			seriousStorm += 1;
@@ -25,14 +25,17 @@ $(document).ready(function(){
 		  			moderate.push(storm);
 		  			moderateStorm += 1;
 		  		}
-	  		} else {
+		  		var exit = data.storms.storm.length - 1;
+		  		console.log(i+" "+exit);
+	  		} else{
 	  			if(chartYear != "0"){
-	  			console.log(chartYear+": Serious = "+seriousStorm+", Moderate = "+ moderateStorm + ", Total = "+totalStorm);
-	  			stormsData.push([chartYear, seriousStorm, moderateStorm]);
+	  				totalStorm = seriousStorm + moderateStorm;
+		  			console.log(chartYear+": Serious = "+seriousStorm+", Moderate = "+ moderateStorm + ", Total = "+totalStorm);
+		  			stormsData.push([chartYear, seriousStorm, moderateStorm]);
 	  			}
 	  			chartYear = storm.start.substring(0,4);
 	  			console.log(chartYear);
-	  			totalStorm = 1;
+	  			totalStorm = 0;
 				if (storm.category == "C3" || storm.category == "C4" || storm.category == "C5"){
 		  			serious.push(storm);
 		  			seriousStorm = 1;
@@ -44,6 +47,9 @@ $(document).ready(function(){
 		  		}
 	  		}
 		}
+		totalStorm = seriousStorm + moderateStorm;
+		console.log(chartYear+": Serious = "+seriousStorm+", Moderate = "+ moderateStorm + ", Total = "+totalStorm);
+		stormsData.push([chartYear, seriousStorm, moderateStorm]);
 		// console.log("Serious Storms");
 		// for (var i = serious.length - 1; i >= 0; i--) {
 		// 	console.log(serious[i]);
@@ -52,10 +58,10 @@ $(document).ready(function(){
 		// for (var i = moderate.length - 1; i >= 0; i--) {
 		// 	console.log(moderate[i]);
 		// };
-		console.log("All Storms");
-		for (var i = 0; i < storms.length; i++) {
-			console.log(storms[i]);
-		};
+		// console.log("All Storms");
+		// for (var i = 0; i < storms.length; i++) {
+		// 	console.log(storms[i]);
+		// };
 		// console.log("Storm data");
 		// for (var i = 0; i < stormsData.length; i++) {
 		// 	console.log(stormsData[i]);
@@ -70,6 +76,17 @@ $(document).ready(function(){
           legend: { position: 'top', maxLines: 3 },
 		  bar: { groupWidth: '75%' },
           isStacked: true,
+          annotations: {
+    textStyle: {
+      fontName: 'Times-Roman',
+      fontSize: 18,
+      bold: true,
+      italic: true,
+      color: '#871b47',     // The color of the text.
+      auraColor: '#d799ae', // The color of the text outline.
+      opacity: 0.8          // The transparency of the text.
+    }
+},
         };
 
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
