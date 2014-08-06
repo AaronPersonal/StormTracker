@@ -26,10 +26,6 @@ var trackInfo = {};
 var trackPoints = [];
 var s = 1;
 
-$("#map").after(function() { 
-
-google.maps.event.trigger(map, 'resize');
-});
 
 
 $(document).ready(function() { 
@@ -98,7 +94,7 @@ $(document).ready(function() {
 	          center: new google.maps.LatLng(32.2212158,-82.9574812,6),
           zoom: 4,   mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-		google.maps.event.trigger(map, 'resize');
+		
         var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		
        var trackPointsRoute = new google.maps.Polyline({ path: trackPoints,
