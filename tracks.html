@@ -12,45 +12,24 @@
                 bottom : 40px !important; 
                 left : 0 !important;   
             }
+			
+			#maps{
+			text-align : center;
+			font-size:150%;
+			}
         </style>
 	<link rel="stylesheet" href="css/jquery.mobile.css" />
 	<link rel="stylesheet" href="css/beehooaa.css" />	
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.mobile.js"></script>
 	<script src="js/myscript.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGZ697lTX5-A6lEqAlDAS4Dip3EwX_eFc"></script>
+    
 
 
-<script type="text/javascript">
-var trackInfo = {};
-var trackPoints = [];
-var s = 1;
-
-
-
-$(document).ready(function() { 
-	var i = 0;
-	var count = 0;
-	$.getJSON("tracks.json",function(result){
-	$.each(result.tracks.storm[i], function(i) {
-			var name = result.tracks.storm[count].name;
-			$("#stormList").append("<li id='"+count+"'><a href='#map' );'>" + result.tracks.storm[count].name + "</a>");
-			
-			i++;
-			count++;
-           });
-	$("#stormList").listview("refresh");
-	
-});
-});
-
-
-
-
-    </script>
   </head>
   <body>
 <div data-role="page" id="tracksMain">
+
     <div data-role="header">
         <div data-role="navbar">
             <ul>
@@ -73,13 +52,68 @@ $(document).ready(function() {
 	<ul data-role="listview" id="stormList" data-theme="a">
 	</ul>
 	
+	
+	
+	</div>
+	<div data-role="page" id="map" data-theme="a">
+        <header id='maps' data-role="header">
+            <a href="tracks.html" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" data-transition="pop">Home</a>
+            
+        </header>
+        <section class="ui-content" role="main" >
+            <div id="map_canvas" ></div>
+			
+        </section>	
+       
+    </div>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGZ697lTX5-A6lEqAlDAS4Dip3EwX_eFc"></script>
+
 	<script type="text/javascript">
+var trackInfo = {};
+var trackPoints = [];
+var s = 1;
+var myOptions = {};
+var map;
+
+
+$(document).ready(function() { 
+	var i = 0;
+	var count = 0;
+	$.getJSON("tracks.json",function(result){
+	$.each(result.tracks.storm[i], function(i) {
+			var name = result.tracks.storm[count].name;
+			$("#stormList").append("<li data-id='"+ name +"' id='"+count+"'><a href='#map' );'>" + name + "</a>");
+			
+			i++;
+			count++;
+           });
+	$("#stormList").listview("refresh");
+	
+});
+});
 
 	$('#stormList').on('click', 'li', function() {
-		s = $(this).attr('id');
+		s = $(this).attr('id');//set clicked hurricane as one to create
+		$("#maps").append('Tracks for: Hurricane ' + $(this).attr('data-id'));//title
+		});
+		
+		$(document).on("pageshow", "#map", function() {
+	makeMap();
+	makePoints();
+});
+function makeMap() {
+myOptions = {
+	          center: new google.maps.LatLng(32.2212158,-82.9574812,6),
+          zoom: 4,   mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+		
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+}
+		
+		function makePoints() {
 		$.getJSON("tracks.json",function(result){
-
- $.each(result.tracks.storm[s].event, function(i) {
+		trackPoints = []; //clear array
+ $.each(result.tracks.storm[s].event, function(i) {//create hurricane
 			var date = result.tracks.storm[s].event[i].date;
 			var time = result.tracks.storm[s].event[i].time;
 			var lat = parseFloat(result.tracks.storm[s].event[i].lat);
@@ -92,33 +126,13 @@ $(document).ready(function() {
 			i++;
            });
 		   
-		   var myOptions = {
-	          center: new google.maps.LatLng(32.2212158,-82.9574812,6),
-          zoom: 4,   mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-		
-        var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		
        var trackPointsRoute = new google.maps.Polyline({ path: trackPoints,
             strokeColor: "#FF0000", strokeWeight: 2 });      
         trackPointsRoute.setMap(map);
 });	
-    });
+    }
 	
 	</script>
-	
-	
-	</div>
-	<div data-role="page" id="map" data-theme="a">
-        <header data-role="header">
-            <a href="tracks.html" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" data-transition="pop">Home</a>
-            <h1 id="mapsHeader" class="ui-title"></h1>
-        </header>
-        <section class="ui-content" role="main" >
-            <div id="map_canvas" ></div>
-			
-        </section>	
-       
-    </div>
   </body>
 </html>

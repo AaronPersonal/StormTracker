@@ -1,0 +1,93 @@
+
+/* Reports Page
+-----------------------------------------------------------------------------------------------------------*/
+body {
+    background-color: #006335;
+} 
+
+#reportsList{
+	margin-top: 2em;
+}
+.reportTitle{
+	width: 80%;
+}
+h1{
+	text-align: center;
+	font-family: arial;
+}
+#byYearReport{
+	width: 100%;
+}
+
+.reportDivs{
+	background: white;
+	width: 80%;
+	min-width: 200px; 
+	height: 100%;
+	min-height: 300px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.yearReportTables{
+	width: 100%;
+	min-width: 300px; 
+	height: 100%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*td, th{
+	text-align: center;
+	vertical-align: center;
+	width: 100px;
+	height: 30px;
+}
+#tableHeading{
+	rowspan: 0;
+}
+*/
+table {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666;
+	font-size:10px;
+	width: 80%;
+	text-shadow: 1px 1px 0px #fff;
+	background:#eaebec;
+	margin:5px;
+	border:#ccc 1px solid;
+	border-radius:3px;
+	box-shadow: 0 1px 2px #d1d1d1;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+table th {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top:1px solid #fafafa;
+	border-bottom:1px solid #e0e0e0;
+	width: 100%;
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+}
+
+table tr {
+	text-align: center;
+	width: 100%;
+}
+table td {
+	padding:5px;
+	border-top: 1px solid #ffffff;
+	border-bottom:1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	width: 16%;
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+}
+
+
+table tr:hover td {
+	background: #f2f2f2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+}
