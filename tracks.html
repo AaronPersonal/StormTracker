@@ -122,7 +122,38 @@ myOptions = {
 			var windspeed = result.tracks.storm[s].event[i].windspeed;
 			var stage = result.tracks.storm[s].event[i].stage;
 			
-			trackPoints.push(new google.maps.LatLng(lat,"-" + lon));
+			var pos = new google.maps.LatLng(lat,"-" + lon);
+			trackPoints.push(pos);
+			
+			var content = '<div style="width:130px; height:50px;">Date: ' + date + '</p>' +
+			'<p>Time: ' + time + '</p>' +
+			'<p>Mbar: ' + mbar + '</p>' +
+			'<p>Wind Speed: ' + windspeed + '</p>' +
+			'<p>Stage: ' + stage + '</p> </div>';
+
+			
+		var infowindow = new google.maps.InfoWindow({
+      content: content
+  });
+
+		
+        var marker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            title: date + ' ' + time
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+			infowindow.open(map,marker);
+			
+        });
+
+			
+			
+			
+			
+			
+			
+			
 			i++;
            });
 		   
