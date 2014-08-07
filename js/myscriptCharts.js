@@ -50,24 +50,8 @@ $(document).ready(function(){
 		totalStorm = seriousStorm + moderateStorm;
 		console.log(chartYear+": Serious = "+seriousStorm+", Moderate = "+ moderateStorm + ", Total = "+totalStorm);
 		stormsData.push([chartYear, seriousStorm, moderateStorm]);
-		// console.log("Serious Storms");
-		// for (var i = serious.length - 1; i >= 0; i--) {
-		// 	console.log(serious[i]);
-		// }
-		// console.log("Moderate Storms");
-		// for (var i = moderate.length - 1; i >= 0; i--) {
-		// 	console.log(moderate[i]);
-		// };
-		// console.log("All Storms");
-		// for (var i = 0; i < storms.length; i++) {
-		// 	console.log(storms[i]);
-		// };
-		// console.log("Storm data");
-		// for (var i = 0; i < stormsData.length; i++) {
-		// 	console.log(stormsData[i]);
-		// };
+		
 		google.load("visualization", "1", {packages:["corechart"], callback: drawChart});
-      // google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable(stormsData);
 
