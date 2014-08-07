@@ -39,9 +39,12 @@ $(document).ready(function(){
     console.log(s.name);
     $("#tableBody").append("<tr><td>"+s.name+"</td><td>"+s.start+"</td><td>"+s.end+"</td><td>"+s.category+"</td><td>"+s.maxMPH+"</td><td>"+s.maxKM+"</td><td>"+s.minMBAR+"</td><td>"+s.damage+"</td><td>"+s.deaths+"</td></tr>");
   };
+    $("#byYearReport").append("<table class='yearReportTables' id='yearReportTable"+nthYear+"'><thead><tr><th colspan='6'>"+chartYear+"</th></tr><tr><th>Name</th><th>Start</th><th>End</th><th>Max KM</th><th>Damage</th><th>Deaths</th></tr></thead><tbody>");
+                  for (var j = 0; j<storms.length; j++) {
+                    $("#yearReportTable"+nthYear).append("<tr><td>"+storms[j].name+"</td><td>"+storms[j].start+"</td><td>"+storms[j].end+"</td><td>"+storms[j].maxKM+"</td><td>"+storms[j].damage+"</td><td>"+storms[j].deaths+"</td></tr>");
+                  }
+                  $("#yearReportTable"+nthYear).append("<tr><th>"+chartYear+" Totals</th></tr><tr><th colspan='2'>Total Storms</th><td>"+totalStorm+"</td><th>Worst Storm</th><td>"+maxStorm.name+"</td><td>"+maxStorm.maxKM+" km/h</td></tr><tr></tr></tbody></table>");
   $("#sortableReport").append("</tbody></table>");
-    $('#sortableReportTable').dataTable({
-      paging: false
-    });
+    
 });
    });
