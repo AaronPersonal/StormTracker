@@ -22,10 +22,7 @@
 	<link rel="stylesheet" href="css/beehooaa.css" />	
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.mobile.js"></script>
-	<script src="js/myscript.js"></script>
     
-
-
   </head>
   <body>
 <div data-role="page" id="tracksMain">
@@ -51,9 +48,6 @@
 	<!--Insert dynamic listbox-->
 	<ul data-role="listview" id="stormList" data-theme="a">
 	</ul>
-	
-	
-	
 	</div>
 	<div data-role="page" id="map" data-theme="a">
         <header id='maps' data-role="header">
@@ -136,7 +130,6 @@ myOptions = {
       content: content
   });
 
-		
         var marker = new google.maps.Marker({
             position: pos,
             map: map,
@@ -144,16 +137,7 @@ myOptions = {
         });
         google.maps.event.addListener(marker, 'click', function() {
 			infowindow.open(map,marker);
-			
         });
-
-			
-			
-			
-			
-			
-			
-			
 			i++;
            });
 		   
